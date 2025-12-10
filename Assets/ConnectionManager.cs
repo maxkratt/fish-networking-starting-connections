@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ConnectionManager : MonoBehaviour
 {
-    [SerializeField] private NetworkManager NetworkManager;
+    [SerializeField] private NetworkManager _networkManager;
 
     public void StartHost()
     {
@@ -13,16 +13,16 @@ public class ConnectionManager : MonoBehaviour
 
     public void StartServer()
     {
-        NetworkManager.ServerManager.StartConnection();
+        _networkManager.ServerManager.StartConnection();
     }
 
     public void StartClient()
     {
-        NetworkManager.ClientManager.StartConnection();
+        _networkManager.ClientManager.StartConnection();
     }
 
     public void SetIPAddress(string text)
     {
-        NetworkManager.TransportManager.Transport.SetClientAddress(text);
+        _networkManager.TransportManager.Transport.SetClientAddress(text);
     }
 }
